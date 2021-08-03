@@ -17,5 +17,6 @@ echo "<hr>";
 $warga1->person3('Kholid','depok');
 ?>
     
+    <p>Ali Ghufron</p>
 </body>
 </html>
