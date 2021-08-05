@@ -44,13 +44,13 @@
                 //print_r($_POST);
                 if($querysimpan == TRUE){
                     echo "<script>
-                            alert('Berhasil tersimpan');
+                            alert('Data berhasil tersimpan');
                             document.location.href = 'index.php';
                         </script>";
                 } else {
                     echo "<script>
-                            alert('Gagal tersimpan');
-                            document.location.href = 'index.php';
+                            alert('Data gagal tersimpan');
+                            document.location.href = 'form-daftar.php';
                         </script>";
                 }
             }
