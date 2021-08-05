@@ -223,7 +223,8 @@ if(isset($_GET['hapus'])){
                                             <td><?php echo $data['no_hp']; ?></td>
                                             <td class="text-center">
                                                 <a class="btn btn-success btn-circle btn-sm" href="detail-warga.php?id=<?php echo $data['id']; ?>"><i class="fas fa-info"></i></a> 
-                                                <a class="btn btn-danger btn-circle btn-sm" href="index.php?hapus=<?php echo $data['id']; ?>"><i class="fas fa-trash"></i></a></td>
+                                                <a class="btn btn-danger btn-circle btn-sm" href="index.php?hapus=<?php echo $data['id']; ?>"><i class="fas fa-trash"></i></a>
+                                            </td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
