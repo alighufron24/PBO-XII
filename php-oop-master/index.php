@@ -40,12 +40,12 @@ if(isset($_GET['hapus'])){
     $queryhapus = $Db->delete($idwarga);
     if($queryhapus == TRUE){
         echo "<script>
-                alert('Berhasil terhapus');
+                alert('Data berhasil terhapus');
                 document.location.href = 'index.php';
             </script>";
     } else {
         echo "<script>
-                alert('Gagal terhapus');
+                alert('Data gagal terhapus');
                 document.location.href = 'index.php';
             </script>";
     }
