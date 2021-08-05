@@ -10,7 +10,6 @@ Class MyDb {
         $this->db = new PDO("mysql:host={$host};dbname={$dbname}", $username, $password);
     }
 
-    // Untuk menampilkan data
     public function show()
     {
         $query = $this->db->prepare("SELECT * FROM data_warga");
@@ -19,7 +18,6 @@ Class MyDb {
         return $data;
     }
 
-    // Untuk menambahkan data baru kedalam tabel
     public function add_data($no_ktp,$nama_lengkap,$alamat_lengkap,$no_hp)
     {
         $data = $this->db->prepare('INSERT INTO data_warga (no_ktp,nama_lengkap,alamat_lengkap,no_hp) VALUES (?, ?, ?, ?)');
@@ -33,7 +31,6 @@ Class MyDb {
         return $data->rowCount();
     }
 
-    // Untuk memunculkan detail dari data tabel
     public function get_by_id($id_warga){
         $query = $this->db->prepare("SELECT * FROM data_warga where id=?");
         $query->bindParam(1, $id_warga);
@@ -41,7 +38,6 @@ Class MyDb {
         return $query->fetch();
     }
 
-    // Untuk menghapus data di dalam tabel
     public function delete($id_warga)
     {
         $query = $this->db->prepare("DELETE FROM data_warga where id=?");
