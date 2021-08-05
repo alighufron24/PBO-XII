@@ -51,6 +51,15 @@ Class MyDb {
         $query->execute();
         return $query->rowCount();
     }
+
+    public function update(){
+        $query = $this->db->prepare("SELECT * FROM data_warga where id=?");
+        $query->bindParam(1, $id_warga);
+
+        
+        $query->execute();
+        return $query->fetch();
+    }
    
 
 }
