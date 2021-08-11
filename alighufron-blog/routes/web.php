@@ -18,4 +18,6 @@ Route::get('/', function () {
 });
 
 Route::resource('blog', BlogController::class);
+
+use App\Http\Controllers\BlogController;
 Route::get('search', [BlogController::class, 'search'])->name('search');
