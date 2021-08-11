@@ -12,19 +12,17 @@
     <title>CRUD Laravel</title>
 
     <!-- Custom fonts for this template -->
-    <link href="Template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../Template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="Template/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../Template/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="{{ asset('Template/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet')}}">
-
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link href="../../Template/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    
 
 </head>
 
@@ -82,17 +80,18 @@
                     </form>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="GET" action="{{ route('search') }}">
+                    <!-- <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" id="search" name="search" placeholder="Search title"
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="submit">
+                                <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -108,11 +107,11 @@
                                 aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" name="search" class="form-control bg-light border-0 small"
+                                        <input type="text" class="form-control bg-light border-0 small"
                                             placeholder="Search for..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" name="search" type="button">
+                                            <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
                                             </button>
                                         </div>
@@ -130,7 +129,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ali Ghufron</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset('Template/img/undraw_profile.svg')}}">
+                                    src="../../Template/img/undraw_profile.svg">
                             </a>
                         </li>
 
@@ -141,7 +140,32 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    @yield('template')
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Detail Data</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <h3 class=" mt-3"><strong>{{ $blog->title }}</strong></h3>
+
+                                <img class="mt-3 mb-5 rounded" src="{{ Storage::url('public/blogs/').$blog->image }}" alt="Gambar" width="250px">
+                            </div>
+                            <div class="container">
+                                <hr>
+                                {!! $blog->content !!}
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ route('blog.index') }}" class="btn btn-dark btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-arrow-left"></i>
+                                </span>
+                                <span class="text">Kembali</span>
+                            </a>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -169,26 +193,32 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    
 
     
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('Template/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{ asset('Template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="../../Template/vendor/jquery/jquery.min.js"></script>
+    <script src="../../Template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ asset('Template/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <script src="../../Template/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="{{ asset('Template/js/sb-admin-2.min.js')}}"></script>
+    <script src="../../Template/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="{{ asset('Template/vendor/datatables/jquery.dataTables.min.js')}}')}}"></script>
-    <script src="{{ asset('Template/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="../../Template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../Template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{ asset('jTemplate/s/demo/datatables-demo.js')}}"></script>
+    <script src="jTemplate/s/demo/datatables-demo.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'kontent' );
+    </script>
 
 </body>
 

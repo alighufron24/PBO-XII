@@ -24,7 +24,7 @@
                                             <th>No</th>
                                             <th>Gambar</th>
                                             <th>Judul</th>
-                                            <th>Content</th>
+                                            <!-- <th>Content</th> -->
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -33,7 +33,7 @@
                                             <td>No</td>
                                             <th>Gambar</th>
                                             <th>Judul</th>
-                                            <th>Content</th>
+                                            <!-- <th>Content</th> -->
                                             <th>Aksi</th>
                                         </tr>
                                     </tfoot>
@@ -46,10 +46,11 @@
                                                 <img src="{{ Storage::url('public/blogs/').$blogs->image }}" class="rounded" style="width: 150px;">
                                             </td>
                                             <td>{{ $blogs->title }}</td>
-                                            <td>{!! $blogs->content !!}</td>
+                                            <!-- <td>{!! $blogs->content !!}</td> -->
                                             <td class="text-center">
                                                 <form onsubmit="return confirm('Apakah Anda yakin ingin menghapusnya?');" action="{{ route('blog.destroy',$blogs->id) }}" method="POST">
-                                                    <a class="btn btn-success btn-circle btn-sm" href="{{ route('blog.edit',$blogs->id) }}"><i class="far fa-edit"></i></a>
+                                                    <a class="btn btn-warning btn-circle btn-sm" href="{{ route('blog.edit',$blogs->id) }}"><i class="far fa-edit"></i></a>
+                                                    <a class="btn btn-success btn-circle btn-sm" href="{{ route('blog.show',$blogs->id) }}"><i class="far fa-eye"></i></a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
