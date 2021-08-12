@@ -24,7 +24,7 @@
                                             <th>No</th>
                                             <th>Gambar</th>
                                             <th>Judul</th>
-                                            <!-- <th>Content</th> -->
+                                            <th style="width: 500px;">Content</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -33,7 +33,7 @@
                                             <td>No</td>
                                             <th>Gambar</th>
                                             <th>Judul</th>
-                                            <!-- <th>Content</th> -->
+                                            <th style="width: 500px;">Content</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </tfoot>
@@ -46,7 +46,7 @@
                                                 <img src="{{ Storage::url('public/blogs/').$blogs->image }}" class="rounded" style="width: 150px;">
                                             </td>
                                             <td>{{ $blogs->title }}</td>
-                                            <!-- <td>{!! $blogs->content !!}</td> -->
+                                            <td style="width: 500px;">{!! $blogs->content !!}</td>
                                             <td class="text-center">
                                                 <form onsubmit="return confirm('Apakah Anda yakin ingin menghapusnya?');" action="{{ route('blog.destroy',$blogs->id) }}" method="POST">
                                                     <a class="btn btn-warning btn-circle btn-sm" href="{{ route('blog.edit',$blogs->id) }}"><i class="far fa-edit"></i></a>
