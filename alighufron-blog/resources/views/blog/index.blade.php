@@ -76,17 +76,15 @@
                     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
                     <script>
-
-                        @if(session()->has('success'))
-
-                            toastr.success('{{ session('success') }}', 'BERHASIL!');
+                        //message with toastr
+                            @if(session()->has('success'))
+                            
+                            toastr.success('{{ session('success') }}', 'BERHASIL!'); 
 
                         @elseif(session()->has('error'))
 
-                            toastr.error('{{ session('error') }}', 'GAGAL!');
-
+                            toastr.error('{{ session('error') }}', 'GAGAL!'); 
+                            
                         @endif
-
-
                     </script>
 @endsection
