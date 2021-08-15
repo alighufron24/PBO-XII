@@ -91,6 +91,7 @@
                     </script>
 @endif
 @if(Auth::user()->role == 'pengguna')
+<h3 class="h3 mb-5 text-primary"><b>Choose the Articles</b></h3>
 
             <div class="row">
 
